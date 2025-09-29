@@ -1,0 +1,42 @@
+\documentclass[a4paper]{report}
+\input{templates/shared/header.tex}
+\author{你的名字}
+\title{課程筆記模板}
+
+\thispagestyle{empty}
+
+\usepackage{adjustbox}
+\usepackage{centernot}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	這是課程筆記模板，支援多個 lecture 文件的自動載入。
+	只需在 lectures/ 資料夾中創建 lec\_1.tex, lec\_2.tex 等文件即可。
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+% 自動載入所有 lecture 文件
+% 使用 \lec{1}{10} 載入 lec_1.tex 到 lec_10.tex
+% 根據需要調整數字範圍
+\lec{1}{10}
+
+\newpage
+%─────Appendix────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+\appendix
+\appendixpage{}
+
+\input{appendix.tex}
+
+\newpage
+%─────Reference──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+\pagestyle{plain}
+\printbibliography{}
+
+\end{document}
